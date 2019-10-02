@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { BackButton, Toolbar, Page, Button, Navigator } from "react-onsenui";
+import { BackButton, Toolbar, Page, Navigator } from "react-onsenui";
 import Form from "./Components/Form";
-var index = 1;
+import Results from "./Components/Results";
 
 class App extends Component {
   renderToolbar = (route, navigator) => {
@@ -19,43 +19,45 @@ class App extends Component {
     );
   };
 
-  handleClick = navigator => navigator.popPage();
+  handleClick = navigator => {
+    navigator.popPage();
+  };
 
   pushPage = navigator => {
     navigator.pushPage({
-      title: `Another page ${index}`,
-      hasBackButton: true
+      title: "Rent Calulator",
+      hasBackButton: true,
+      component: Results
     });
-    index++;
   };
 
   renderPage = (route, navigator) => {
+    const props = route.props || {};
+    props.navigator = navigator;
+    props.pushPage = this.pushPage;
     return (
       <Page
         key={route.title}
         renderToolbar={this.renderToolbar.bind(this, route, navigator)}
       >
-        <section style={{ margin: "16px", textAlign: "center" }}>
-          <Button onClick={this.pushPage.bind(this, navigator)}>
-            Push Page
-          </Button>
-        </section>
+        {React.createElement(route.component, props)}
       </Page>
     );
   };
 
-  render = () => {
+  render() {
     return (
       <Navigator
         swipeable
         renderPage={this.renderPage}
         initialRoute={{
-          title: "First page",
-          hasBackButton: false
+          title: "Rent Calculator",
+          hasBackButton: false,
+          component: Form
         }}
       />
     );
-  };
+  }
 }
 
 export default App;
