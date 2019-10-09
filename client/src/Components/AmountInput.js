@@ -12,17 +12,15 @@ class AmountInput extends Component {
   render() {
     return (
       <section style={{ textAlign: "center" }}>
-        <p>
-          <Input
-            value={this.props[this.props.bill]}
-            name={this.props.bill}
-            onChange={this.handleInputChange}
-            type="number"
-            modifier="underbar"
-            float
-            placeholder="Amount"
-          />
-        </p>
+        <Input
+          value={this.props[this.props.bill]}
+          name={this.props.bill}
+          onChange={this.handleInputChange}
+          type="number"
+          modifier="underbar"
+          float
+          placeholder="Amount"
+        />
       </section>
     );
   }

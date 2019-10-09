@@ -1,4 +1,4 @@
-import { USER_INPUT } from "./actions";
+import { USER_INPUT, USER_SELECT } from "./actions";
 import { Map } from "immutable";
 
 const initialState = Map({
@@ -26,6 +26,11 @@ function reducer(state = initialState, action) {
     case USER_INPUT:
       return state.setIn(
         ["bills", Object.keys(action.payload)[0], "amount"],
+        Object.values(action.payload)[0]
+      );
+    case USER_SELECT:
+      return state.setIn(
+        ["bills", Object.keys(action.payload)[0], "paidBy"],
         Object.values(action.payload)[0]
       );
     default:

@@ -25,7 +25,7 @@ class App extends Component {
 
   pushPage = navigator => {
     navigator.pushPage({
-      title: "Rent Calulator",
+      title: "Results ",
       hasBackButton: true,
       component: Results
     });
@@ -51,7 +51,7 @@ class App extends Component {
         swipeable
         renderPage={this.renderPage}
         initialRoute={{
-          title: "Rent Calculator",
+          title: "Bills",
           hasBackButton: false,
           component: Form
         }}

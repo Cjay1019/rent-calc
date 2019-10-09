@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AmountInput from "./AmountInput";
+import SelectInput from "./SelectInput";
 import { Button, List, ListItem, Page, ListHeader } from "react-onsenui";
 
 class Form extends Component {
@@ -13,13 +14,18 @@ class Form extends Component {
         <List
           dataSource={[
             <AmountInput bill="rent" />,
-            <AmountInput bill="electric" />,
-            3,
-            4,
-            5
+            <SelectInput bill="rent"></SelectInput>
           ]}
           renderRow={this.renderRow}
-          renderHeader={() => <ListHeader>Bills</ListHeader>}
+          renderHeader={() => <ListHeader>Rent</ListHeader>}
+        />
+        <List
+          dataSource={[
+            <AmountInput bill="electric" />,
+            <SelectInput bill="electric"></SelectInput>
+          ]}
+          renderRow={this.renderRow}
+          renderHeader={() => <ListHeader>Electric</ListHeader>}
         />
         <section style={{ margin: "16px", textAlign: "center" }}>
           <Button
