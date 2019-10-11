@@ -19,7 +19,7 @@ class AmountInput extends Component {
           type="number"
           modifier="underbar"
           float
-          placeholder="Amount"
+          placeholder="$ Amount"
         />
       </section>
     );

@@ -13,17 +13,20 @@ class SelectInput extends Component {
 
   render() {
     return (
-      <div style={{ margin: 50 }}>
+      <>
+        Who paid this bill?&nbsp;&nbsp;
         <Select
-          id="choose-sel"
-          value={this.props.paidBy}
+          modifier="underbar"
+          value={this.props.paidBy || "Select Person"}
+          label="this"
           onChange={this.editSelects}
         >
-          <option value="basic">Basic</option>
-          <option value="material">Material</option>
-          <option value="underbar">Underbar</option>
+          <option value="Filler">Filler</option>
+          <option value="Select Person">Select Person</option>
+          <option value="Katherine">Katherine</option>
+          <option value="Conner">Conner</option>
         </Select>
-      </div>
+      </>
     );
   }
 }

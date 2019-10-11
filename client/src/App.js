@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { BackButton, Toolbar, Page, Navigator } from "react-onsenui";
 import Form from "./Components/Form";
 import Results from "./Components/Results";
@@ -28,6 +29,9 @@ class App extends Component {
       title: "Results ",
       hasBackButton: true,
       component: Results
+    });
+    this.props.dispatch({
+      type: "SUBMIT"
     });
   };
 
@@ -60,4 +64,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    people: state.toJS().people
+  };
+};
+
+export default connect(mapStateToProps)(App);

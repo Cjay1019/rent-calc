@@ -27,6 +27,14 @@ class Form extends Component {
           renderRow={this.renderRow}
           renderHeader={() => <ListHeader>Electric</ListHeader>}
         />
+        <List
+          dataSource={[
+            <AmountInput bill="renters" />,
+            <SelectInput bill="renters"></SelectInput>
+          ]}
+          renderRow={this.renderRow}
+          renderHeader={() => <ListHeader>Renter's Insurance</ListHeader>}
+        />
         <section style={{ margin: "16px", textAlign: "center" }}>
           <Button
             onClick={this.props.pushPage.bind(this, this.props.navigator)}
