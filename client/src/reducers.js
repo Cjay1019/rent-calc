@@ -10,28 +10,30 @@ const initialState = Map({
   people: Map({
     katherine: Map({
       name: "Katherine",
-      amountPaid: 0,
-      paidMore: false
+      amountPaid: 0
     }),
     conner: Map({
       name: "Conner",
-      amountPaid: 0,
-      paidMore: false
+      amountPaid: 0
     })
-  })
+  }),
+  total: 0
 });
 
-function submit(state = initialState) {
-  let total = 0;
+function submit(state = initialState, person) {
   let conTotal = 0;
   let katTotal = 0;
+  let total = 0;
   Object.keys(state.toJS().bills).forEach(e => {
     total += parseFloat(state.toJS().bills[e].amount);
     state.toJS().bills[e].paidBy === "Katherine"
       ? (katTotal += parseFloat(state.toJS().bills[e].amount))
       : (conTotal += parseFloat(state.toJS().bills[e].amount));
   });
-  console.log(total, conTotal, katTotal);
+  return state
+    .setIn(["people", "katherine", "amountPaid"], katTotal)
+    .setIn(["people", "conner", "amountPaid"], conTotal)
+    .setIn(["total"], total);
 }
 
 function reducer(state = initialState, action) {
@@ -47,7 +49,7 @@ function reducer(state = initialState, action) {
         Object.values(action.payload)[0]
       );
     case SUBMIT:
-      submit(state);
+      return submit(state);
     default:
       return state;
   }
