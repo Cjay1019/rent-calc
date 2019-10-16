@@ -13,8 +13,7 @@ class Results extends Component {
   dollarify = price =>
     new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "USD",
-      maximumSignificantDigits: 3
+      currency: "USD"
     }).format(price);
   venmoAmount = () => {
     if (this.whoPaidMore === "Katherine") {
@@ -26,7 +25,7 @@ class Results extends Component {
   render() {
     return (
       <>
-        <section style={{ margin: "16px", textAlign: "center" }}>
+        <section style={{ marginTop: "50%", textAlign: "center" }}>
           <h1>{`${this.whoPaidLess} needs to Venmo ${
             this.whoPaidMore
           } ${this.dollarify(this.venmoAmount())}!`}</h1>
