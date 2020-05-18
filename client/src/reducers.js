@@ -5,7 +5,8 @@ const initialState = Map({
   bills: Map({
     rent: { amount: null, paidBy: null },
     electric: { amount: null, paidBy: null },
-    renters: { amount: null, paidBy: null }
+    insurance: { amount: null, paidBy: null },
+    phones: { amount: null, paidBy: null }
   }),
   people: Map({
     katherine: Map({
