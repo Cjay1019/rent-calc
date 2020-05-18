@@ -33,7 +33,7 @@ class Form extends Component {
             <SelectInput bill="insurance"></SelectInput>
           ]}
           renderRow={this.renderRow}
-          renderHeader={() => <ListHeader>Renter's Insurance</ListHeader>}
+          renderHeader={() => <ListHeader>Insurance</ListHeader>}
         />
         <List
           dataSource={[
@@ -41,7 +41,7 @@ class Form extends Component {
             <SelectInput bill="insurance"></SelectInput>
           ]}
           renderRow={this.renderRow}
-          renderHeader={() => <ListHeader>Renter's Insurance</ListHeader>}
+          renderHeader={() => <ListHeader>Phones</ListHeader>}
         />
         <section style={{ margin: "16px", textAlign: "center" }}>
           <Button
