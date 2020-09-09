@@ -38,7 +38,7 @@ class Form extends Component {
         <List
           dataSource={[
             <AmountInput bill="phones" />,
-            <SelectInput bill="insurance"></SelectInput>
+            <SelectInput bill="phones"></SelectInput>
           ]}
           renderRow={this.renderRow}
           renderHeader={() => <ListHeader>Phones</ListHeader>}
