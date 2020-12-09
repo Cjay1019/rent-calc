@@ -3,10 +3,10 @@ import { Map } from "immutable";
 
 const initialState = Map({
   bills: Map({
-    rent: { amount: null, paidBy: null },
-    electric: { amount: null, paidBy: null },
-    insurance: { amount: null, paidBy: null },
-    phones: { amount: null, paidBy: null }
+    rent: { amount: null, paidBy: "Katherine" },
+    electric: { amount: null, paidBy: "Conner" },
+    insurance: { amount: 226.93, paidBy: "Katherine" },
+    phones: { amount: null, paidBy: "Conner" }
   }),
   people: Map({
     katherine: Map({
